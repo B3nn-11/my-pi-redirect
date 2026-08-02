@@ -2,23 +2,32 @@
 <html>
 <head>
 <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="refresh" content="5">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Ben's Hub">
-<title>Be right back!</title>
+<title>Ben's Hub</title>
 <style>
   body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #111; color: #fff; }
   .box { text-align: center; }
-  h1 { font-size: 3em; }
-  p { color: #aaa; }
+  h1 { font-size: 2em; }
+  p { color: #aaa; margin-top: 0.5rem; }
+  #count { font-size: 3em; margin: 1rem 0; }
+  .hint { font-size: 0.85em; color: #555; margin-top: 1rem; }
 </style>
 </head>
 <body>
 <div class="box">
-  <h1>Be right back!</h1>
-  <p>The site is starting up. Please wait...</p>
+  <h1>Ben's Hub</h1>
+  <div id="count">5</div>
+  <p>Redirecting to your server...</p>
+  <p class="hint">To add to Home Screen, tap the Share button now.</p>
 </div>
+<script>
+  var n = 5;
+  var t = setInterval(function() {
+    n--;
+    document.getElementById('count').textContent = n;
+    if (n <= 0) { clearInterval(t); window.location.href = "https://candidates-comic-ranging-kim.trycloudflare.com"; }
+  }, 1000);
+</script>
 </body>
 </html>
